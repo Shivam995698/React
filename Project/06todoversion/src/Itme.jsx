@@ -1,3 +1,4 @@
+import { MdOutlineDelete } from "react-icons/md";
 function Item({itemname,itemDate,ondelete}) {
   return (
     <div className="container ">
@@ -8,7 +9,7 @@ function Item({itemname,itemDate,ondelete}) {
           <button type="button" className="btn btn-success kg-button" onClick={()=>{
             ondelete(itemname)
           }}>
-            Delete
+            <MdOutlineDelete />
           </button>
         </div>
       </div>

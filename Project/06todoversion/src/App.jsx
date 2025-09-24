@@ -10,17 +10,19 @@ const Todos = [];
 
 function App() {
   const [itemVal, setaval] = useState([]);
-  const [additem, added] = useState("");
   const onhandling = (itemName, itemdueDate) => {
     console.log(`itemName ${itemName} itemDate ${itemdueDate}`);
-    const newitem = [
-      ...itemVal,
-      {
-        name: itemName,
-        Date: itemdueDate,
-      },
-    ];
-    setaval(newitem);
+
+    setaval((currVal)=>{
+      const newitem = [
+        ...currVal,
+        {
+          name: itemName,
+          Date: itemdueDate,
+        },
+      ];
+      return newitem;
+    })
   };
   const onhandlingDelete = (itemName) => {
     const newItem = itemVal.filter(item=>item.name != itemName);
